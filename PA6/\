@@ -1,0 +1,19 @@
+/*
+ * CS214 Assignment 6
+ *
+ * Jonathan Lee (jl1424)
+ * Niharika Nagar (nn162)
+ *
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h> 
+#include "malloc.h"
+
+
+int main(int argc, char **argv){
+
+
+	return 0;	
+}
