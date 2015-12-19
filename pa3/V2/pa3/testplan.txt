@@ -1,0 +1,117 @@
+File1.txt: duplicate tokens, token begins with delimiter, token begins with numbers, token ends with numbers
+	 contains: hello hello world2 a c d
+			  3407hf3r0
+			  @#!#1
+
+File 2.txt: delimiters and different case than in File1.txt
+	contains: hello(^*^*)World
+
+Directory1: Contains two files with identical tokens with different delimiters and uppercase
+	Contains File1.txt and File2.txt
+
+Directory2: Contains one file and  subdirectory with another file
+	File1 txt: duplicate of File1.txt in Directory1
+	Subdirectory: contains duplicate of File2.txt 
+
+
+NOTE: INPUT IS GIVEN IN THE FORMAT "<file to write to> <file to create inverted index>""
+
+1. //No input given
+Input: 
+Output: "Error: file/directory not found"
+
+2. //Given file or directory name does not exist
+Input: output.txt filedoesnotexist.txt
+or
+Input: output.txt filedoesnotexist 
+Output: "Error: file/directory not found"
+
+3. //Given an object that is not a file or directory
+Input: output.txt 
+Output: "Error: not a file or directory"
+
+4. //Token begins with delimiter, token begins with numbers, token ends with numbers, duplicate tokens, sorting tokens
+Input: output.txt File1.txt
+Output: in file output.txt
+		<list> a
+		File1 1
+		</list>
+		<list> c
+		File1 1
+		</list>
+		<list> d
+		File1 1
+		</list>
+		<list> 	hello
+		File1 2
+		</list>
+		<list> world2
+		File1 1
+		</list>
+		<list> 3407hf3r0
+		File1 1
+		</list>
+		<list> 1
+		File1 1
+		</list>
+
+5. //Tokens seperated with non-space delimiters and different case
+Input: output.txt File1.txt
+Output: in file output.txt
+		<list> hello
+		File2 1
+		</list>
+		<list> world
+		File2 1
+		</list>
+
+6. // Recursive traversing files in subdirectories as well as directories 
+Input: output.txt Directory2
+Output: in file output.txt
+		<list> a
+		File1 1
+		</list>
+		<list> c
+		File1 1
+		</list>
+		<list> hello
+		File1 2 File2 1
+		</list>
+		<list> world
+		File2 1
+		</list>
+		<list> world2
+		File1 1
+		</list>
+		<list> 3407hf3r0
+		File1 1
+		</list>
+		<list> 1
+		File1 1
+		</list> 
+
+
+7. //Traversing files in one directory with identical tokens in different files, sorts by count
+Input: output.txt Directory1
+Output: in file output.txt
+		<list> a
+		File1 1
+		</list>
+		<list> c
+		File1 1
+		</list>
+		<list> hello
+		File1 2 File2 1
+		</list>
+		<list> world
+		File2 1
+		</list>
+		<list> world2
+		File1 1
+		</list>
+		<list> 3407hf3r0
+		File1 1
+		</list>
+		<list> 1
+		File1 1
+		</list> 

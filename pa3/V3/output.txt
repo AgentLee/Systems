@@ -1,0 +1,6 @@
+<list> hello
+Folder/file3.txt 2
+</list>
+<list> world
+Folder/file3.txt 2
+</list>
