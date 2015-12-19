@@ -1,0 +1,15 @@
+<list> hello
+Folder/file1.txt 1
+</list>
+<list> hello
+Folder/file4.txt 1
+</list>
+<list> world
+Folder/file1.txt 1
+</list>
+<list> world
+Folder/file4.txt 1
+</list>
+<list> xyz
+Folder/file3.txt 1
+</list>
