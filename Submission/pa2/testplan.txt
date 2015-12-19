@@ -1,0 +1,132 @@
+TestPlan
+
+./sl --> Segmentation Fault (if statement to avoid this is added but fails)
+./sl 1 --> Integers
+./sl 2 --> Strings
+./sl 3 --> Doubless
+
+1. Integer Manipulation
+	Input: 
+		SortedListPtr list = SLCreate(compareInts, destroyBasicTypeAlloc);
+		int *a = 15;
+		int *b = 15;
+		int *c = 13985932;
+		int *d = 18;
+		int *e = 188;
+		int *f = 43;
+		int *g = 10;
+		int *h = 2;
+		int *i = 221;
+	
+	a. Insertion
+		SLInsert(list, a);
+		SLInsert(list, b);
+		SLInsert(list, c);
+		SLInsert(list, d);
+		SLInsert(list, e);
+		SLInsert(list, f);
+		SLInsert(list, g);
+		SLInsert(list, h);
+		SLInsert(list, i);
+		Expected Output: 13985932, 221, 188, 43, 18, 15, 10, 2 
+							Error is printed for duplicate at 15.
+		
+	b.	Removing
+		/* Cases: remove head, middle, tail */
+		SLRemove(list, a);
+		SLRemove(list, c);
+		SLRemove(list, i);
+
+		Expected Output: 221, 43, 15, 2
+	
+	SortedListIteratorPtr iter = SLCreateIterator(list);
+
+	c. GetItem and NextItem
+		SLGetItem(iter);
+		SLNext(iter);
+		SLGetItem(iter);
+
+		Expected Output: 13985932
+						 iter is now on 221
+						 221
+
+2. String Manipulation
+   Input:
+        list = SLCreate(compareStrings, destroyBasicTypeAlloc);
+        char* q = banana;
+        char* r = zucchini;
+        char* x = apple;
+        char* y = orange;
+        char* z = grapefruit;
+
+ a. Insertion
+    Input: 
+       SLInsert(list, q);
+       SLInsert(list, r);
+       SLInsert(list, x);
+       SLInsert(list, y);
+       SLInsert(list, z);
+
+    Expected Output: zucchini, orange, grapefruit, banana. apple
+       
+
+   b. Removing
+        Input:
+            /* Cases: remove head, middle, tail */
+            SLRemove(list, q);
+            SLRemove(list, x);
+            SLRemove(list, z);
+        Expected Output: orange, banana
+   
+    iter = SLCreateIterator(list);
+
+    c. GetItem and NextItem
+       Input:
+            /* After head was removed above */
+            SLGetItem(iter);
+        Expected Output: zucchini
+
+        Input:
+            /*GetItem after NextItem is called */
+            SLNextItem(iter);
+            SLGetItem(iter);
+        Expected Output: orange
+
+    SLDestroy();
+    SLDestroyIterator();
+
+3. Doubles Manipulation
+	Input: 
+		list = SLCreate(compareDoubles, destroyBasicTypeNoAlloc);
+		double *j = 214;
+		double *k = 73;
+		double *l = 8999;
+		double *m = 9000;
+		double *n = 113;
+
+	a. Insertion
+		SLInsert(list, &j);
+		SLInsert(list, &k);
+		SLInsert(list, &l);
+		SLInsert(list, &m);
+		SLInsert(list, &n);
+
+		Expected Output: 9000, 8999, 214, 113, 73
+
+	b. Removing
+		/* Cases: remove head, middle, tail */
+		SLRemove(list, &m);
+		SLRemove(list, &j);
+
+		Expected Output: 8999, 113, 73
+
+	iter = SLCreateIterator(list);
+
+	c. GetItem and NextItem
+		SLGetItem(iter);
+		SLNext(iter);
+		SLGetItem(iter);
+
+		Expected Output: 9000
+						 iter is now on 8999
+						 8999

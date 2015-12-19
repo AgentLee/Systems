@@ -1,0 +1,79 @@
+TestPlan
+
+1. Integer Manipulation
+	SortedListPtr list = SLCreate(compareInts, destroyBasicTypeAlloc);
+		int *a = 15;
+		int *b = 15;
+		int *c = 13985932;
+		int *d = 18;
+		int *e = 188;
+		int *f = 43;
+		int *g = 10;
+		int *h = 2;
+		int *i = 221;
+	
+	a. Insertion
+		SLInsert(list, a);
+		SLInsert(list, b);
+		SLInsert(list, c);
+		SLInsert(list, d);
+		SLInsert(list, e);
+		SLInsert(list, f);
+		SLInsert(list, g);
+		SLInsert(list, h);
+		SLInsert(list, i);
+		Expected Output: 13985932, 221, 188, 43, 18, 15, 10, 2
+		
+	b.	Removing
+		/* Cases: remove head, middle, tail */
+		SLRemove(list, a);
+		SLRemove(list, c);
+		SLRemove(list, i);
+
+		Expected Output: 221, 43, 15, 2
+	
+	SortedListIteratorPtr iter = SLCreateIterator(list);
+
+	c. GetItem and NextItem
+		SLGetItem(iter);
+		SLNext(iter);
+		SLGetItem(iter);
+
+		Expected Output: 13985932
+						 iter is now on 221
+						 221
+
+2. String Manipulation
+
+3. Doubles Manipulation
+	listThree = SLCreate(compareDoubles, destroyBasicTypeNoAlloc);
+		double *a = 214;
+		double *b = 73;
+		double *c = 8999;
+		double *d = 9000;
+		double *e = 113;
+
+	a. Insertion
+		SLInsert(list, a);
+		SLInsert(list, b);
+		SLInsert(list, c);
+		SLInsert(list, d);
+		SLInsert(list, e);
+
+		Expected Output: 9000, 8999, 214, 113, 73
+
+	b. Removing
+		/* Cases: remove head, middle, tail */
+		SLRemove(list, d);
+		SLRemove(list, a);
+
+		Expected Output: 8999, 113, 73
+
+	iter = SLCreateIterator(list);
+
+	c. GetItem and NextItem
+		SLGetItem(iter);
+		SLNext(iter);
+		SLGetItem(iter);
+
+		Expected Output:
