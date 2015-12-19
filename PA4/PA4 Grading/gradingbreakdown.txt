@@ -1,0 +1,28 @@
+Due Date:  Mar 28, 2014 11:55 pm
+
+
+
+
+Makefile
+-5: make all fails or (make all+clean fails)
+
+-2: clean doesn't work
+
+README:
+-5: big-O missing
+-2: file format missing
+
+-5: big-O and file format missing
+
+
+
+Student Test Cases:
+
+
+
+-5: missing concrete test cases
+
+-5: significant number test cases missing
+-2: border cases missing
+
+-8: Missing real test cases; no non-error cases

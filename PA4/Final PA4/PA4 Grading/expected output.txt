@@ -1,0 +1,95 @@
+﻿3 points per test case
+
+
+
+--------
+
+
+
+1. too many arguments
+
+2. too few arguments
+
+3. index file doesn’t exist
+
+4. index file is empty (graceful non-segfault upon execution)
+
+5. q
+
+6. sa, 1 term, not found
+
+7. sa, 1 term, found
+
+8. sa, 2 terms, both found, no overlap
+
+9. sa, 2 terms, both found, some overlap
+
+10. sa, 2 terms, both found, some overlap, case insensitivity
+
+11. sa, 3 terms, one missing, some overlap
+
+12. sa, 4 terms, all found, some overlap
+
+13. so, 1 term, not found
+
+14. so, 1 term, found
+
+15. so, 2 terms, both found, no overlap
+
+16. so, 2 terms, both found, some overlap
+
+17. so, 2 terms, both found, some overlap, case insensitivity
+
+18. so, 3 terms, one missing, some overlap
+
+19. so, 4 terms, all found, some overlap
+
+20. single term, appears in 1 file
+
+
+
+--------
+
+
+Here are some examples showing how we actually tested 6-20:
+
+First, run ./index output.txt testdir/
+Second, run ./search output.txt
+Then input command (-> indicates the expected output)
+ 
+
+
+6: sa goat -> Empty
+
+7: sa mary -> 1.txt 2.txt 3.txt
+
+8: sa little lamb -> Empty
+
+9: sa mary lamb -> 3.txt
+
+10: sa MARy LamB -> 3.txt
+
+11: sa mary lamb emu -> Empty
+
+12: sa mary had a little -> 2.txt
+
+13: so goat -> Empty
+
+14: so mary -> 1.txt 2.txt 3.txt
+
+15: so little lamb -> 1.txt 2.txt 3.txt 4.txt
+
+16: so mary a -> 1.txt 2.txt 3.txt 4.txt
+
+17: so MaRY A -> 1.txt 2.txt 3.txt 4.txt
+
+18: so emu mary a -> 1.txt 2.txt 3.txt 4.txt
+
+19: so mary had a little -> 1.txt 2.txt 3.txt 4.txt
+
+20: so bleu -> 5.txt
+
+
+
+
+

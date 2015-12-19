@@ -1,0 +1,27 @@
+<list> a
+Directory2/File1.txt 1
+</list>
+<list> c
+Directory2/File1.txt 1
+</list>
+<list> d
+Directory2/File1.txt 1
+</list>
+<list> hello
+Directory2/File1.txt 2
+</list>
+<list> hello
+Directory2/Subdirectory/File2.txt 1
+</list>
+<list> world
+Directory2/Subdirectory/File2.txt 1
+</list>
+<list> world2
+Directory2/File1.txt 1
+</list>
+<list> 1
+Directory2/File1.txt 1
+</list>
+<list> 3407hf3r0
+Directory2/File1.txt 1
+</list>

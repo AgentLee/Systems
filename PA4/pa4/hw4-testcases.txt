@@ -1,0 +1,96 @@
+index.txt
+---------------------------
+<list> 873
+dir1/file1.txt 1
+</list>
+<list> cow
+dir1/file1.txt 1 dir1/file2.txt 1
+</list>
+<list> jumped
+dir1/file2.txt 1
+</list>
+<list> moon
+</list>
+<list> over
+dir1/file1.txt 1 dir1/file2.txt 1
+</list>
+<list> the
+dir1/file1.txt 2 dir1/file2.txt 1
+</list>
+
+------------------------------------
+
+1. //too many arguments
+input: ./search file1.txt file
+output:
+	"ERROR: Too many arguments"
+
+2. // too few arguments
+input: ./search
+output: 
+	"ERROR: Too few arguements"
+
+3. // argv[1] is not file
+input: ./search file
+output:
+	"ERROR: Not a file"
+
+4.//sa, 1 term
+input: ./search index.txt
+	sa cow
+output: 
+	dir1/file1.txt
+	dir1/file2.txt 
+
+5.//so, 1 term
+input: ./search index.txt
+	so cow
+output: 
+	dir1/file1.txt
+	dir1/file2.txt 
+
+6. //sa, 1 term with upper case
+input: ./search index.txt
+	sa coW
+output: 
+	dir1/file1.txt
+	dir1/file2.txt 
+
+7. //so, 2 terms, containing with different files
+input: ./search index.txt
+	so jumped 873
+output: 
+	dir1/file1.txt
+	dir1/file2.txt
+	
+8. //sa, 2 terms, containing with different files
+input: ./search index.txt
+	sa jumped 873
+output: 
+	"No files found"
+
+9. //so, 2 terms containing same files
+input: ./search index.txt
+	so over the 
+output: 
+	dir1/file1.txt
+	dir1/file2.txt	 
+
+10.//sa, 2 terms containing same files
+input: ./search index.txt
+	sa over the 
+output: 
+	dir1/file1.txt
+	dir1/file2.txt
+11. //so, 3 terms, 2 in different files, 1 not found
+input: ./search index.txt
+	sa jumped 873 a
+output: 
+	dir1/file1.txt
+	dir1/file2.txt
+12. //sa, 3 terms, 2 in different files, 1 not found
+input: ./search index.txt
+	sa jumped 873 a
+output: 
+	"No files found"
+

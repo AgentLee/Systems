@@ -1,0 +1,6 @@
+<list> Harry
+text1.txt 2 text2.txt 2
+</list>
+<list> Potter
+text2.txt 1	
+</list>
