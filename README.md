@@ -1,3 +1,3 @@
 # CS214: Systems Programming
 
-Various assignments from Spring 2014
+Various assignments from Fall 2014
